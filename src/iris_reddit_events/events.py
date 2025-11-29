@@ -6,7 +6,7 @@ import numpy as np
 
 def cluster_events(X, df_posts, n_clusters=None, distance_threshold=0.8):
     """
-    Use AgglomerativeClustering with cosine distance;
+    Use AgglomerativeClustering with cosine distance.
     set n_clusters=None and distance_threshold<1 to cut by distance.
     """
     EVENTS_DIR.mkdir(parents=True, exist_ok=True)
