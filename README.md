@@ -4,6 +4,8 @@ End-to-end NLP pipeline that collects public Reddit posts, clusters them into **
 
 This is a compact “AI + SWE” project: API ingestion -> preprocessing/vectorization -> unsupervised clustering -> summarization -> evaluation (ROUGE), organized as a reusable Python package under `src/`.
 
+Demo:
+
 ## Contents
 
 - **Data ingestion**: Reddit API collection via `praw`, persisted as JSONL.
