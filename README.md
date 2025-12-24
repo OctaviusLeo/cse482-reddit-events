@@ -2,9 +2,9 @@
 
 End-to-end NLP pipeline that collects public Reddit posts, clusters them into **events**, and generates short **extractive summaries** per event.
 
-This is a compact “AI + SWE” project: API ingestion → preprocessing/vectorization → unsupervised clustering → summarization → evaluation (ROUGE), organized as a reusable Python package under `src/`.
+This is a compact “AI + SWE” project: API ingestion -> preprocessing/vectorization -> unsupervised clustering -> summarization -> evaluation (ROUGE), organized as a reusable Python package under `src/`.
 
-## What this demonstrates (for interviewers)
+## Contents
 
 - **Data ingestion**: Reddit API collection via `praw`, persisted as JSONL.
 - **NLP feature engineering**: TF–IDF vectorization + stopwords.
@@ -23,11 +23,11 @@ This is a compact “AI + SWE” project: API ingestion → preprocessing/vector
 
 ## How it works (high level)
 
-1. **Collect** posts from selected subreddits → `data/raw/reddit_*.jsonl`
-2. **Preprocess + vectorize** (title + selftext → cleaned text → TF–IDF) → `data/processed/posts.parquet`
-3. **Cluster into events** with agglomerative clustering → `data/events/events_labeled.parquet`
-4. **Summarize each event** by selecting the most centroid-similar posts → `data/summaries/summaries.parquet`
-5. **Evaluate** summaries vs. a small human-written reference set → ROUGE metrics
+1. **Collect** posts from selected subreddits -> `data/raw/reddit_*.jsonl`
+2. **Preprocess + vectorize** (title + selftext -> cleaned text -> TF–IDF) -> `data/processed/posts.parquet`
+3. **Cluster into events** with agglomerative clustering -> `data/events/events_labeled.parquet`
+4. **Summarize each event** by selecting the most centroid-similar posts -> `data/summaries/summaries.parquet`
+5. **Evaluate** summaries vs. a small human-written reference set -> ROUGE metrics
 
 ## Quickstart (Windows / PowerShell)
 
@@ -84,7 +84,7 @@ python -m iris_reddit_events.collect
 
 This writes a timestamped JSONL file under `data/raw/`.
 
-### 2) Run preprocessing → clustering → summarization
+### 2) Run preprocessing -> clustering -> summarization
 
 ```powershell
 python -m iris_reddit_events.pipeline
@@ -95,7 +95,7 @@ Defaults:
 - Clustering threshold: `distance_threshold=0.8`
 - Summary size: `top_k=3` titles
 
-You can adjust these in `src/iris_reddit_events/pipeline.py` (or call the underlying functions directly).
+Can adjust these in `src/iris_reddit_events/pipeline.py` (or call the underlying functions directly).
 
 ### 3) Evaluate (ROUGE)
 
