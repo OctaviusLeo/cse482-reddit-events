@@ -9,7 +9,7 @@ import nltk
 
 from nltk.corpus import stopwords
 
-STOP = set(stopwords.words("english"))
+STOP = stopwords.words("english")  # Keep as list for sklearn
 
 def load_raw() -> pd.DataFrame:
     rows = []
@@ -31,7 +31,7 @@ def build_corpus(df: pd.DataFrame):
 def vectorize(df: pd.DataFrame):
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     docs = build_corpus(df)
-    vec = TfidfVectorizer(stop_words=STOP, max_features=5000)
+    vec = TfidfVectorizer(stop_words="english", max_features=5000)
     X = vec.fit_transform(docs)
     df_out = df.copy()
     df_out.to_parquet(PROCESSED_DIR / "posts.parquet")
