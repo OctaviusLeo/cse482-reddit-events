@@ -21,6 +21,12 @@ The codebase is organized as a reusable Python package under `src/` and includes
 
 ---
 
+## Demo
+
+![Demo](assets/demo.png)
+
+---
+
 ## Highlights
 
 <details>
