@@ -6,3 +6,4 @@ praw
 python-dotenv
 nltk
 rouge-score
+pyarrow

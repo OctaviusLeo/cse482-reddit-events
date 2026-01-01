@@ -11,7 +11,7 @@ def cluster_events(X, df_posts, n_clusters=None, distance_threshold=0.8):
     """
     EVENTS_DIR.mkdir(parents=True, exist_ok=True)
     model = AgglomerativeClustering(
-        affinity="cosine",
+        metric="cosine",
         linkage="average",
         n_clusters=n_clusters,
         distance_threshold=distance_threshold,
