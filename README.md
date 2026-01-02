@@ -98,7 +98,7 @@ python -m iris_reddit_events.collect
 
 This writes a timestamped JSONL file under `data/raw/`.
 
-### 2) Run preprocessing → clustering → summarization
+### 2) Run preprocessing -> clustering -> summarization
 
 ```powershell
 $env:PYTHONPATH = "src"
