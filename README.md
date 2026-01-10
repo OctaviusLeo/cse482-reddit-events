@@ -489,7 +489,7 @@ This should already be in `requirements.txt`, but reinstall if needed.
 
 ### Issue: No raw files found in data/raw/
 
-**Solution:** The project includes sample data. If missing, create test data or run the collector:
+**Solution:** The project includes sample data. If missing create test data or run the collector:
 ```powershell
 python -m iris_reddit_events.collect
 ```
